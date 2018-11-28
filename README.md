@@ -1,4 +1,4 @@
-For more information please visit us at: [cosmitto.io](https://alqo.org/) or visit our ANN thread at: [BitcoinTalk](https://bitcointalk.org/)
+For more information please visit us at: [cosmitto.io](https://cosmitto.io/) or visit our ANN thread at: [BitcoinTalk](https://bitcointalk.org/)
 
 # Coin Specs
 
@@ -25,6 +25,7 @@ For more information please visit us at: [cosmitto.io](https://alqo.org/) or vis
 
 Masternode and staking rewards with PoS:
 During the PoS phase, rewards will be distributed among masternode operators, stakers and the dev fund based on a distribution ratio of 60%/30%/10% respectively.
+Masternodes: 80% of rewards
 
 # PoS Reward Distribution
 
@@ -32,6 +33,7 @@ _Proof of Stake will automatically be enabled at block height 409001._
 <table>
 <tr><th>Block Height</th><th>Reward Amount</th>
 </table>
+Proof of Stake: 20% of rewards
 
 
 # Further information
