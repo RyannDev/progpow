@@ -2,7 +2,7 @@ For more information please visit us at: [cosmitto.io](https://alqo.org/) or vis
 
 # Coin Specs
 
-• Coin Name: ALQO  
+• Coin Name: Cosmitto  
 • Ticker: CMT  
 • PoW Algorithm: Quark  
 • Premine: (#1 Block) ? CMT (?% of PoW)*  
