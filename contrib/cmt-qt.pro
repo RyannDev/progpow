@@ -78,7 +78,7 @@ HEADERS += src/activemasternode.h \
            src/crypter.h \
            src/obfuscation-relay.h \
            src/obfuscation.h \
-           src/alqo-config.h \
+           src/cmt-config.h \
            src/db.h \
            src/eccryptoverify.h \
            src/ecwrapper.h \
@@ -131,7 +131,7 @@ HEADERS += src/activemasternode.h \
            src/wallet_ismine.h \
            src/walletdb.h \
            src/compat/sanity.h \
-           src/config/alqo-config.h \
+           src/config/cmt-config.h \
            src/crypto/common.h \
            src/crypto/hmac_sha256.h \
            src/crypto/hmac_sha512.h \
@@ -332,7 +332,7 @@ HEADERS += src/activemasternode.h \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.h \
            src/crypto/aes_helper.c \
            src/qt/bitcoinamountfield.moc \
-           src/qt/alqo.moc \
+           src/qt/cmt.moc \
            src/qt/intro.moc \
            src/qt/overviewpage.moc \
            src/qt/rpcconsole.moc \
@@ -373,9 +373,9 @@ SOURCES += src/activemasternode.cpp \
            src/crypter.cpp \
            src/obfuscation-relay.cpp \
            src/obfuscation.cpp \
-           src/alqo-cli.cpp \
-           src/alqo-tx.cpp \
-           src/alqo.cpp \
+           src/cmt-cli.cpp \
+           src/cmt-tx.cpp \
+           src/cmt.cpp \
            src/db.cpp \
            src/eccryptoverify.cpp \
            src/ecwrapper.cpp \
@@ -470,8 +470,8 @@ SOURCES += src/activemasternode.cpp \
            src/qt/coincontroltreewidget.cpp \
            src/qt/csvmodelwriter.cpp \
            src/qt/obfuscationconfig.cpp \
-           src/qt/alqo.cpp \
-           src/qt/alqostrings.cpp \
+           src/qt/cmt.cpp \
+           src/qt/cmtstrings.cpp \
            src/qt/editaddressdialog.cpp \
            src/qt/guiutil.cpp \
            src/qt/intro.cpp \
@@ -549,7 +549,7 @@ SOURCES += src/activemasternode.cpp \
            src/test/sighash_tests.cpp \
            src/test/sigopcount_tests.cpp \
            src/test/skiplist_tests.cpp \
-           src/test/test_alqo.cpp \
+           src/test/test_cmt.cpp \
            src/test/timedata_tests.cpp \
            src/test/transaction_tests.cpp \
            src/test/uint256_tests.cpp \
@@ -640,21 +640,21 @@ SOURCES += src/activemasternode.cpp \
            src/leveldb/helpers/memenv/memenv.cc \
            src/leveldb/helpers/memenv/memenv_test.cc \
            src/secp256k1/src/java/org_bitcoin_NativeSecp256k1.c
-RESOURCES += src/qt/alqo.qrc src/qt/alqo_locale.qrc
+RESOURCES += src/qt/cmt.qrc src/qt/cmt_locale.qrc
 
-TRANSLATIONS += src/qt/locale/alqo_bg.ts \
-                src/qt/locale/alqo_de.ts \
-                src/qt/locale/alqo_en.ts \
-                src/qt/locale/alqo_es.ts \
-                src/qt/locale/alqo_fi.ts \
-                src/qt/locale/alqo_fr.ts \
-                src/qt/locale/alqo_it.ts \
-                src/qt/locale/alqo_ja.ts \
-                src/qt/locale/alqo_pl.ts \
-                src/qt/locale/alqo_pt.ts \
-                src/qt/locale/alqo_ru.ts \
-                src/qt/locale/alqo_sk.ts \
-                src/qt/locale/alqo_sv.ts \
-                src/qt/locale/alqo_vi.ts \
-                src/qt/locale/alqo_zh_CN.ts \
-                src/qt/locale/alqo_zh_TW.ts
+TRANSLATIONS += src/qt/locale/cmt_bg.ts \
+                src/qt/locale/cmt_de.ts \
+                src/qt/locale/cmt_en.ts \
+                src/qt/locale/cmt_es.ts \
+                src/qt/locale/cmt_fi.ts \
+                src/qt/locale/cmt_fr.ts \
+                src/qt/locale/cmt_it.ts \
+                src/qt/locale/cmt_ja.ts \
+                src/qt/locale/cmt_pl.ts \
+                src/qt/locale/cmt_pt.ts \
+                src/qt/locale/cmt_ru.ts \
+                src/qt/locale/cmt_sk.ts \
+                src/qt/locale/cmt_sv.ts \
+                src/qt/locale/cmt_vi.ts \
+                src/qt/locale/cmt_zh_CN.ts \
+                src/qt/locale/cmt_zh_TW.ts

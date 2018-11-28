@@ -1,0 +1,12 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=cmt
+Comment=cmt P2P Cryptocurrency
+Comment[fr]=cmt, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=cmt, eşten eşe kriptografik sanal para birimi
+Exec=cmt-qt %u
+Terminal=false
+Type=Application
+Icon=cmt128
+MimeType=x-scheme-handler/cmt;
+Categories=Office;Finance;

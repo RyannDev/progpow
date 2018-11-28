@@ -17,7 +17,7 @@ osx=true
 SIGNER=
 VERSION=
 commit=false
-url=https://github.com/alqo-project/alqo
+url=https://github.com/cmt-project/cmt
 proc=2
 mem=2000
 lxc=true
@@ -31,7 +31,7 @@ commitFiles=true
 read -d '' usage <<- EOF
 Usage: $scriptName [-c|u|v|b|s|B|o|h|j|m|] signer version
 
-Run this script from the directory containing the alqo, gitian-builder, gitian.sigs, and alqo-detached-sigs.
+Run this script from the directory containing the cmt, gitian-builder, gitian.sigs, and cmt-detached-sigs.
 
 Arguments:
 signer          GPG signer to sign each build assert file
@@ -39,7 +39,7 @@ version        Version number, commit, or branch to build. If building a commit 
 
 Options:
 -c|--commit    Indicate that the version argument is for a commit or branch
--u|--url    Specify the URL of the repository. Default is https://github.com/alqo-project/alqo
+-u|--url    Specify the URL of the repository. Default is https://github.com/cmt-project/cmt
 -v|--verify     Verify the gitian build
 -b|--build    Do a gitian build
 -s|--sign    Make signed binaries for Windows and Mac OSX
@@ -237,8 +237,8 @@ echo ${COMMIT}
 if [[ $setup = true ]]
 then
     sudo apt-get install ruby apache2 git apt-cacher-ng python-vm-builder qemu-kvm qemu-utils
-    git clone https://github.com/alqo-project/gitian.sigs.git
-    git clone https://github.com/alqo-project/alqo-detached-sigs.git
+    git clone https://github.com/cmt-project/gitian.sigs.git
+    git clone https://github.com/cmt-project/cmt-detached-sigs.git
     git clone https://github.com/devrandom/gitian-builder.git
     pushd ./gitian-builder
     if [[ -n "$USE_LXC" ]]
@@ -252,7 +252,7 @@ then
 fi
 
 # Set up build
-pushd ./alqo
+pushd ./cmt
 git fetch
 git checkout ${COMMIT}
 popd
@@ -261,7 +261,7 @@ popd
 if [[ $build = true ]]
 then
     # Make output folder
-    mkdir -p ./alqo-binaries/${VERSION}
+    mkdir -p ./cmt-binaries/${VERSION}
 
     # Build Dependencies
     echo ""
@@ -271,7 +271,7 @@ then
     mkdir -p inputs
     wget -N -P inputs $osslPatchUrl
     wget -N -P inputs $osslTarUrl
-    make -C ../alqo/depends download SOURCES_PATH=`pwd`/cache/common
+    make -C ../cmt/depends download SOURCES_PATH=`pwd`/cache/common
 
     # Linux
     if [[ $linux = true ]]
@@ -279,9 +279,9 @@ then
         echo ""
         echo "Compiling ${VERSION} Linux"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit alqo=${COMMIT} --url alqo=${url} ../alqo/contrib/gitian-descriptors/gitian-linux.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-linux.yml
-        mv build/out/alqo-*.tar.gz build/out/src/alqo-*.tar.gz ../alqo-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit cmt=${COMMIT} --url cmt=${url} ../cmt/contrib/gitian-descriptors/gitian-linux.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-linux --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-linux.yml
+        mv build/out/cmt-*.tar.gz build/out/src/cmt-*.tar.gz ../cmt-binaries/${VERSION}
     fi
     # Windows
     if [[ $windows = true ]]
@@ -289,10 +289,10 @@ then
         echo ""
         echo "Compiling ${VERSION} Windows"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit alqo=${COMMIT} --url alqo=${url} ../alqo/contrib/gitian-descriptors/gitian-win.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-win.yml
-        mv build/out/alqo-*-win-unsigned.tar.gz inputs/alqo-win-unsigned.tar.gz
-        mv build/out/alqo-*.zip build/out/alqo-*.exe ../alqo-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit cmt=${COMMIT} --url cmt=${url} ../cmt/contrib/gitian-descriptors/gitian-win.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-unsigned --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-win.yml
+        mv build/out/cmt-*-win-unsigned.tar.gz inputs/cmt-win-unsigned.tar.gz
+        mv build/out/cmt-*.zip build/out/cmt-*.exe ../cmt-binaries/${VERSION}
     fi
     # Mac OSX
     if [[ $osx = true ]]
@@ -300,10 +300,10 @@ then
         echo ""
         echo "Compiling ${VERSION} Mac OSX"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit alqo=${COMMIT} --url alqo=${url} ../alqo/contrib/gitian-descriptors/gitian-osx.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-osx.yml
-        mv build/out/alqo-*-osx-unsigned.tar.gz inputs/alqo-osx-unsigned.tar.gz
-        mv build/out/alqo-*.tar.gz build/out/alqo-*.dmg ../alqo-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit cmt=${COMMIT} --url cmt=${url} ../cmt/contrib/gitian-descriptors/gitian-osx.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-unsigned --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-osx.yml
+        mv build/out/cmt-*-osx-unsigned.tar.gz inputs/cmt-osx-unsigned.tar.gz
+        mv build/out/cmt-*.tar.gz build/out/cmt-*.dmg ../cmt-binaries/${VERSION}
     fi
     # AArch64
     if [[ $aarch64 = true ]]
@@ -311,9 +311,9 @@ then
         echo ""
         echo "Compiling ${VERSION} AArch64"
         echo ""
-        ./bin/gbuild -j ${proc} -m ${mem} --commit alqo=${COMMIT} --url alqo=${url} ../alqo/contrib/gitian-descriptors/gitian-aarch64.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-aarch64.yml
-        mv build/out/alqo-*.tar.gz build/out/src/alqo-*.tar.gz ../alqo-binaries/${VERSION}
+        ./bin/gbuild -j ${proc} -m ${mem} --commit cmt=${COMMIT} --url cmt=${url} ../cmt/contrib/gitian-descriptors/gitian-aarch64.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-aarch64 --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-aarch64.yml
+        mv build/out/cmt-*.tar.gz build/out/src/cmt-*.tar.gz ../cmt-binaries/${VERSION}
     fi
     popd
 
@@ -341,32 +341,32 @@ then
     echo ""
     echo "Verifying v${VERSION} Linux"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../alqo/contrib/gitian-descriptors/gitian-linux.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-linux ../cmt/contrib/gitian-descriptors/gitian-linux.yml
     # Windows
     echo ""
     echo "Verifying v${VERSION} Windows"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../alqo/contrib/gitian-descriptors/gitian-win.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-win-unsigned ../cmt/contrib/gitian-descriptors/gitian-win.yml
     # Mac OSX
     echo ""
     echo "Verifying v${VERSION} Mac OSX"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../alqo/contrib/gitian-descriptors/gitian-osx.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-unsigned ../cmt/contrib/gitian-descriptors/gitian-osx.yml
     # AArch64
     echo ""
     echo "Verifying v${VERSION} AArch64"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../alqo/contrib/gitian-descriptors/gitian-aarch64.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-aarch64 ../cmt/contrib/gitian-descriptors/gitian-aarch64.yml
     # Signed Windows
     echo ""
     echo "Verifying v${VERSION} Signed Windows"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../alqo/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../cmt/contrib/gitian-descriptors/gitian-osx-signer.yml
     # Signed Mac OSX
     echo ""
     echo "Verifying v${VERSION} Signed Mac OSX"
     echo ""
-    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../alqo/contrib/gitian-descriptors/gitian-osx-signer.yml
+    ./bin/gverify -v -d ../gitian.sigs/ -r ${VERSION}-osx-signed ../cmt/contrib/gitian-descriptors/gitian-osx-signer.yml
     popd
 fi
 
@@ -381,10 +381,10 @@ then
         echo ""
         echo "Signing ${VERSION} Windows"
         echo ""
-        ./bin/gbuild -i --commit signature=${COMMIT} ../alqo/contrib/gitian-descriptors/gitian-win-signer.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-win-signer.yml
-        mv build/out/alqo-*win64-setup.exe ../alqo-binaries/${VERSION}
-        mv build/out/alqo-*win32-setup.exe ../alqo-binaries/${VERSION}
+        ./bin/gbuild -i --commit signature=${COMMIT} ../cmt/contrib/gitian-descriptors/gitian-win-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-win-signed --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-win-signer.yml
+        mv build/out/cmt-*win64-setup.exe ../cmt-binaries/${VERSION}
+        mv build/out/cmt-*win32-setup.exe ../cmt-binaries/${VERSION}
     fi
     # Sign Mac OSX
     if [[ $osx = true ]]
@@ -392,9 +392,9 @@ then
         echo ""
         echo "Signing ${VERSION} Mac OSX"
         echo ""
-        ./bin/gbuild -i --commit signature=${COMMIT} ../alqo/contrib/gitian-descriptors/gitian-osx-signer.yml
-        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../alqo/contrib/gitian-descriptors/gitian-osx-signer.yml
-        mv build/out/alqo-osx-signed.dmg ../alqo-binaries/${VERSION}/alqo-${VERSION}-osx.dmg
+        ./bin/gbuild -i --commit signature=${COMMIT} ../cmt/contrib/gitian-descriptors/gitian-osx-signer.yml
+        ./bin/gsign -p $signProg --signer $SIGNER --release ${VERSION}-osx-signed --destination ../gitian.sigs/ ../cmt/contrib/gitian-descriptors/gitian-osx-signer.yml
+        mv build/out/cmt-osx-signed.dmg ../cmt-binaries/${VERSION}/cmt-${VERSION}-osx.dmg
     fi
     popd
 
