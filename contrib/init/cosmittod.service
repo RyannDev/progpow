@@ -1,0 +1,26 @@
+[Unit]
+Description=cosmitto's distributed currency daemon
+After=network.target
+
+[Service]
+User=cosmitto
+Group=cosmitto
+
+Type=forking
+PIDFile=/var/lib/cosmittod/cosmittod.pid
+
+ExecStart=/usr/bin/cosmittod -daemon -pid=/var/lib/cosmittod/cosmittod.pid \
+          -conf=/etc/cosmitto/cosmitto.conf -datadir=/var/lib/cosmittod
+
+ExecStop=-/usr/bin/cosmitto-cli -conf=/etc/cosmitto/cosmitto.conf \
+         -datadir=/var/lib/cosmittod stop
+
+Restart=always
+PrivateTmp=true
+TimeoutStopSec=60s
+TimeoutStartSec=2s
+StartLimitInterval=120s
+StartLimitBurst=5
+
+[Install]
+WantedBy=multi-user.target

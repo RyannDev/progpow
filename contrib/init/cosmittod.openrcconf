@@ -1,0 +1,26 @@
+# /etc/conf.d/cosmittod: config file for /etc/init.d/cosmittod
+
+# Config file location
+#BITCOIND_CONFIGFILE="/etc/cosmitto/cosmitto.conf"
+
+# What directory to write pidfile to?  (created and owned by $BITCOIND_USER)
+#BITCOIND_PIDDIR="/var/run/cosmittod"
+
+# What filename to give the pidfile
+#BITCOIND_PIDFILE="${BITCOIND_PIDDIR}/cosmittod.pid"
+
+# Where to write cosmittod data (be mindful that the blockchain is large)
+#BITCOIND_DATADIR="/var/lib/cosmittod"
+
+# User and group to own cosmittod process
+#BITCOIND_USER="cosmitto"
+#BITCOIND_GROUP="cosmitto"
+
+# Path to cosmittod executable
+#BITCOIND_BIN="/usr/bin/cosmittod"
+
+# Nice value to run cosmittod under
+#BITCOIND_NICE=0
+
+# Additional options (avoid -conf and -datadir, use flags above)
+BITCOIND_OPTS=""
