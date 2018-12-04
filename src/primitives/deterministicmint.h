@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The cosmitto & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_DETERMINISTICMINT_H
-#define ALQO_DETERMINISTICMINT_H
+#ifndef cosmitto_DETERMINISTICMINT_H
+#define cosmitto_DETERMINISTICMINT_H
 
 #include <libzerocoin/Denominations.h>
 #include <uint256.h>
@@ -64,4 +65,4 @@ public:
     };
 };
 
-#endif //ALQO_DETERMINISTICMINT_H
+#endif //cosmitto_DETERMINISTICMINT_H

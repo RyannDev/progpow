@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The cosmitto & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_SPENDTYPE_H
-#define ALQO_SPENDTYPE_H
+#ifndef cosmitto_SPENDTYPE_H
+#define cosmitto_SPENDTYPE_H
 
 #include <cstdint>
 
@@ -16,4 +17,4 @@ namespace libzerocoin {
     };
 }
 
-#endif //ALQO_SPENDTYPE_H
+#endif //cosmitto_SPENDTYPE_H
