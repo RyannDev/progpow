@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_ACCUMULATORCHECKPOINTS_JSON_H
-#define ALQO_ACCUMULATORCHECKPOINTS_JSON_H
+#ifndef COSMITTO_ACCUMULATORCHECKPOINTS_JSON_H
+#define COSMITTO_ACCUMULATORCHECKPOINTS_JSON_H
 
 #include <string>
 std::string GetMainCheckpoints() {
@@ -475,4 +476,4 @@ std::string GetRegTestCheckpoints() {
     return strRegTestCheckpoints;
 }
 
-#endif //ALQO_ACCUMULATORCHECKPOINTS_JSON_H
+#endif //COSMITTO_ACCUMULATORCHECKPOINTS_JSON_H
