@@ -1,7 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The cosmitto & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -263,11 +264,11 @@ UniValue stop(const UniValue& params, bool fHelp)
     if (fHelp || params.size() > 1)
         throw runtime_error(
             "stop\n"
-            "\nStop ALQO server.");
+            "\nStop cosmitto server.");
     // Event loop will exit after current HTTP requests have been handled, so
     // this reply will get back to the client.
     StartShutdown();
-    return "ALQO server stopping";
+    return "cosmitto server stopping";
 }
 
 
@@ -351,37 +352,37 @@ static const CRPCCommand vRPCCommands[] =
         {"hidden", "reconsiderblock", &reconsiderblock, true, true, false},
         {"hidden", "setmocktime", &setmocktime, true, false, false},
 
-        /* ALQO features */
-        {"alqo", "masternode", &masternode, true, true, false},
-        {"alqo", "listmasternodes", &listmasternodes, true, true, false},
-        {"alqo", "getmasternodecount", &getmasternodecount, true, true, false},
-        {"alqo", "masternodeconnect", &masternodeconnect, true, true, false},
-        {"alqo", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
-        {"alqo", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
-        {"alqo", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
-        {"alqo", "masternodecurrent", &masternodecurrent, true, true, false},
-        {"alqo", "masternodedebug", &masternodedebug, true, true, false},
-        {"alqo", "startmasternode", &startmasternode, true, true, false},
-        {"alqo", "createmasternodekey", &createmasternodekey, true, true, false},
-        {"alqo", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
-        {"alqo", "listmasternodeconf", &listmasternodeconf, true, true, false},
-        {"alqo", "getmasternodestatus", &getmasternodestatus, true, true, false},
-        {"alqo", "getmasternodewinners", &getmasternodewinners, true, true, false},
-        {"alqo", "getmasternodescores", &getmasternodescores, true, true, false},
-        {"alqo", "mnbudget", &mnbudget, true, true, false},
-        {"alqo", "preparebudget", &preparebudget, true, true, false},
-        {"alqo", "submitbudget", &submitbudget, true, true, false},
-        {"alqo", "mnbudgetvote", &mnbudgetvote, true, true, false},
-        {"alqo", "getbudgetvotes", &getbudgetvotes, true, true, false},
-        {"alqo", "getnextsuperblock", &getnextsuperblock, true, true, false},
-        {"alqo", "getbudgetprojection", &getbudgetprojection, true, true, false},
-        {"alqo", "getbudgetinfo", &getbudgetinfo, true, true, false},
-        {"alqo", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
-        {"alqo", "mnfinalbudget", &mnfinalbudget, true, true, false},
-        {"alqo", "checkbudgets", &checkbudgets, true, true, false},
-        {"alqo", "mnsync", &mnsync, true, true, false},
-        {"alqo", "spork", &spork, true, true, false},
-        {"alqo", "getpoolinfo", &getpoolinfo, true, true, false},
+        /* cosmitto features */
+        {"cosmitto", "masternode", &masternode, true, true, false},
+        {"cosmitto", "listmasternodes", &listmasternodes, true, true, false},
+        {"cosmitto", "getmasternodecount", &getmasternodecount, true, true, false},
+        {"cosmitto", "masternodeconnect", &masternodeconnect, true, true, false},
+        {"cosmitto", "createmasternodebroadcast", &createmasternodebroadcast, true, true, false},
+        {"cosmitto", "decodemasternodebroadcast", &decodemasternodebroadcast, true, true, false},
+        {"cosmitto", "relaymasternodebroadcast", &relaymasternodebroadcast, true, true, false},
+        {"cosmitto", "masternodecurrent", &masternodecurrent, true, true, false},
+        {"cosmitto", "masternodedebug", &masternodedebug, true, true, false},
+        {"cosmitto", "startmasternode", &startmasternode, true, true, false},
+        {"cosmitto", "createmasternodekey", &createmasternodekey, true, true, false},
+        {"cosmitto", "getmasternodeoutputs", &getmasternodeoutputs, true, true, false},
+        {"cosmitto", "listmasternodeconf", &listmasternodeconf, true, true, false},
+        {"cosmitto", "getmasternodestatus", &getmasternodestatus, true, true, false},
+        {"cosmitto", "getmasternodewinners", &getmasternodewinners, true, true, false},
+        {"cosmitto", "getmasternodescores", &getmasternodescores, true, true, false},
+        {"cosmitto", "mnbudget", &mnbudget, true, true, false},
+        {"cosmitto", "preparebudget", &preparebudget, true, true, false},
+        {"cosmitto", "submitbudget", &submitbudget, true, true, false},
+        {"cosmitto", "mnbudgetvote", &mnbudgetvote, true, true, false},
+        {"cosmitto", "getbudgetvotes", &getbudgetvotes, true, true, false},
+        {"cosmitto", "getnextsuperblock", &getnextsuperblock, true, true, false},
+        {"cosmitto", "getbudgetprojection", &getbudgetprojection, true, true, false},
+        {"cosmitto", "getbudgetinfo", &getbudgetinfo, true, true, false},
+        {"cosmitto", "mnbudgetrawvote", &mnbudgetrawvote, true, true, false},
+        {"cosmitto", "mnfinalbudget", &mnfinalbudget, true, true, false},
+        {"cosmitto", "checkbudgets", &checkbudgets, true, true, false},
+        {"cosmitto", "mnsync", &mnsync, true, true, false},
+        {"cosmitto", "spork", &spork, true, true, false},
+        {"cosmitto", "getpoolinfo", &getpoolinfo, true, true, false},
 
 #ifdef ENABLE_WALLET
         /* Wallet */
@@ -614,7 +615,7 @@ std::vector<std::string> CRPCTable::listCommands() const
 
 std::string HelpExampleCli(string methodname, string args)
 {
-    return "> alqo-cli " + methodname + " " + args + "\n";
+    return "> cosmitto-cli " + methodname + " " + args + "\n";
 }
 
 std::string HelpExampleRpc(string methodname, string args)
