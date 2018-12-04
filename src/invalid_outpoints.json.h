@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_INVALID_OUTPOINTS_JSON_H
-#define ALQO_INVALID_OUTPOINTS_JSON_H
+#ifndef COSMITTO_INVALID_OUTPOINTS_JSON_H
+#define COSMITTO_INVALID_OUTPOINTS_JSON_H
 #include <string>
 
 std::string LoadInvalidOutPoints()
@@ -6793,4 +6794,4 @@ std::string LoadInvalidOutPoints()
     return str;
 }
 
-#endif //ALQO_INVALID_OUTPOINTS_JSON_H
+#endif //COSMITTO_INVALID_OUTPOINTS_JSON_H

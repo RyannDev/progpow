@@ -65,15 +65,15 @@ noinst_PROGRAMS =
 TESTS =
 
 if BUILD_BITCOIND
-  bin_PROGRAMS += alqod
+  bin_PROGRAMS += cosmittod
 endif
 
 if BUILD_BITCOIN_UTILS
-  bin_PROGRAMS += alqo-cli alqo-tx
+  bin_PROGRAMS += cosmitto-cli cosmitto-tx
 endif
 
 .PHONY: FORCE
-# alqo core #
+# cosmitto core #
 BITCOIN_CORE_H = \
   activemasternode.h \
   accumulators.h \
@@ -191,7 +191,7 @@ obj/build.h: FORCE
 	  "$(abs_top_srcdir)"
 libbitcoin_util_a-clientversion.$(OBJEXT): obj/build.h
 
-# server: shared between alqod and alqo-qt
+# server: shared between cosmittod and cosmitto-qt
 libbitcoin_server_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(MINIUPNPC_CPPFLAGS) $(EVENT_CFLAGS) $(EVENT_PTHREADS_CFLAGS)
 libbitcoin_server_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_server_a_SOURCES = \
@@ -239,7 +239,7 @@ libbitcoin_zmq_a_SOURCES = \
   zmq/zmqpublishnotifier.cpp
 endif
 
-# wallet: shared between alqod and alqo-qt, but only linked
+# wallet: shared between cosmittod and cosmitto-qt, but only linked
 # when wallet enabled
 libbitcoin_wallet_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_wallet_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
@@ -334,7 +334,7 @@ libzerocoin_libbitcoin_zerocoin_a_SOURCES = \
   libzerocoin/Params.cpp \
   libzerocoin/SerialNumberSignatureOfKnowledge.cpp
 
-# common: shared between alqod, and alqo-qt and non-server tools
+# common: shared between cosmittod, and cosmitto-qt and non-server tools
 libbitcoin_common_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_common_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_common_a_SOURCES = \
@@ -397,7 +397,7 @@ if GLIBC_BACK_COMPAT
 libbitcoin_util_a_SOURCES += compat/glibc_compat.cpp
 endif
 
-# cli: shared between alqo-cli and alqo-qt
+# cli: shared between cosmitto-cli and cosmitto-qt
 libbitcoin_cli_a_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
 libbitcoin_cli_a_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
 libbitcoin_cli_a_SOURCES = \
@@ -407,16 +407,16 @@ libbitcoin_cli_a_SOURCES = \
 nodist_libbitcoin_util_a_SOURCES = $(srcdir)/obj/build.h
 #
 
-# alqod binary #
-alqod_SOURCES = alqod.cpp
-alqod_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-alqod_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-alqod_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# cosmittod binary #
+cosmittod_SOURCES = cosmittod.cpp
+cosmittod_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+cosmittod_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+cosmittod_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-alqod_SOURCES += alqod-res.rc
+cosmittod_SOURCES += cosmittod-res.rc
 endif
-alqod_LDADD = \
+cosmittod_LDADD = \
   $(LIBBITCOIN_SERVER) \
   $(LIBBITCOIN_COMMON) \
   $(LIBUNIVALUE) \
@@ -430,38 +430,38 @@ alqod_LDADD = \
   $(LIBMEMENV) \
   $(LIBSECP256K1)
 
-alqod_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
+cosmittod_LDADD += $(BOOST_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS) $(ZMQ_LIBS)
 
-# alqo-cli binary #
-alqo_cli_SOURCES = alqo-cli.cpp
-alqo_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
-alqo_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-alqo_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# cosmitto-cli binary #
+cosmitto_cli_SOURCES = cosmitto-cli.cpp
+cosmitto_cli_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(EVENT_CFLAGS)
+cosmitto_cli_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+cosmitto_cli_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-alqo_cli_SOURCES += alqo-cli-res.rc
+cosmitto_cli_SOURCES += cosmitto-cli-res.rc
 endif
 
-alqo_cli_LDADD = \
+cosmitto_cli_LDADD = \
   $(LIBBITCOIN_CLI) \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_UTIL) \
   $(LIBBITCOIN_CRYPTO)
 
-alqo_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
+cosmitto_cli_LDADD += $(BOOST_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(EVENT_LIBS)
 #
 
-# alqo-tx binary #
-alqo_tx_SOURCES = alqo-tx.cpp
-alqo_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
-alqo_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
-alqo_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+# cosmitto-tx binary #
+cosmitto_tx_SOURCES = cosmitto-tx.cpp
+cosmitto_tx_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES)
+cosmitto_tx_CXXFLAGS = $(AM_CXXFLAGS) $(PIE_FLAGS)
+cosmitto_tx_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
 
 if TARGET_WINDOWS
-alqo_tx_SOURCES += alqo-tx-res.rc
+cosmitto_tx_SOURCES += cosmitto-tx-res.rc
 endif
 
-alqo_tx_LDADD = \
+cosmitto_tx_LDADD = \
   $(LIBUNIVALUE) \
   $(LIBBITCOIN_COMMON) \
   $(LIBBITCOIN_ZEROCOIN) \
@@ -469,7 +469,7 @@ alqo_tx_LDADD = \
   $(LIBBITCOIN_CRYPTO) \
   $(LIBSECP256K1)
 
-alqo_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
+cosmitto_tx_LDADD += $(BOOST_LIBS) $(CRYPTO_LIBS)
 #
 
 # bitcoinconsensus library #

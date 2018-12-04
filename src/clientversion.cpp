@@ -1,5 +1,6 @@
 // Copyright (c) 2012-2014 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The cosmitto & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -11,10 +12,10 @@
 
 /**
  * Name of client reported in the 'version' message. Report the same name
- * for both alqod and alqo-qt, to make it harder for attackers to
+ * for both cosmittod and cosmitto-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("ALQO Core");
+const std::string CLIENT_NAME("cosmitto Core");
 
 /**
  * Client version number

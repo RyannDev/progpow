@@ -2,43 +2,43 @@
 # Distributed under the MIT software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-bin_PROGRAMS += qt/alqo-qt
+bin_PROGRAMS += qt/cosmitto-qt
 EXTRA_LIBRARIES += qt/libbitcoinqt.a
 
-# alqo qt core #
+# cosmitto qt core #
 QT_TS = \
-  qt/locale/alqo_bg.ts \
-  qt/locale/alqo_ca.ts \
-  qt/locale/alqo_cs.ts \
-  qt/locale/alqo_da.ts \
-  qt/locale/alqo_de.ts \
-  qt/locale/alqo_en.ts \
-  qt/locale/alqo_en_US.ts \
-  qt/locale/alqo_eo.ts \
-  qt/locale/alqo_es.ts \
-  qt/locale/alqo_es_ES.ts \
-  qt/locale/alqo_fi.ts \
-  qt/locale/alqo_fr_FR.ts \
-  qt/locale/alqo_hi_IN.ts \
-  qt/locale/alqo_hr.ts \
-  qt/locale/alqo_hr_HR.ts \
-  qt/locale/alqo_it.ts \
-  qt/locale/alqo_ja.ts \
-  qt/locale/alqo_ko_KR.ts \
-  qt/locale/alqo_lt_LT.ts \
-  qt/locale/alqo_nl.ts \
-  qt/locale/alqo_pl.ts \
-  qt/locale/alqo_pt.ts \
-  qt/locale/alqo_pt_BR.ts \
-  qt/locale/alqo_ro_RO.ts \
-  qt/locale/alqo_ru.ts \
-  qt/locale/alqo_sk.ts \
-  qt/locale/alqo_sv.ts \
-  qt/locale/alqo_tr.ts \
-  qt/locale/alqo_uk.ts \
-  qt/locale/alqo_vi.ts \
-  qt/locale/alqo_zh_CN.ts \
-  qt/locale/alqo_zh_TW.ts
+  qt/locale/cosmitto_bg.ts \
+  qt/locale/cosmitto_ca.ts \
+  qt/locale/cosmitto_cs.ts \
+  qt/locale/cosmitto_da.ts \
+  qt/locale/cosmitto_de.ts \
+  qt/locale/cosmitto_en.ts \
+  qt/locale/cosmitto_en_US.ts \
+  qt/locale/cosmitto_eo.ts \
+  qt/locale/cosmitto_es.ts \
+  qt/locale/cosmitto_es_ES.ts \
+  qt/locale/cosmitto_fi.ts \
+  qt/locale/cosmitto_fr_FR.ts \
+  qt/locale/cosmitto_hi_IN.ts \
+  qt/locale/cosmitto_hr.ts \
+  qt/locale/cosmitto_hr_HR.ts \
+  qt/locale/cosmitto_it.ts \
+  qt/locale/cosmitto_ja.ts \
+  qt/locale/cosmitto_ko_KR.ts \
+  qt/locale/cosmitto_lt_LT.ts \
+  qt/locale/cosmitto_nl.ts \
+  qt/locale/cosmitto_pl.ts \
+  qt/locale/cosmitto_pt.ts \
+  qt/locale/cosmitto_pt_BR.ts \
+  qt/locale/cosmitto_ro_RO.ts \
+  qt/locale/cosmitto_ru.ts \
+  qt/locale/cosmitto_sk.ts \
+  qt/locale/cosmitto_sv.ts \
+  qt/locale/cosmitto_tr.ts \
+  qt/locale/cosmitto_uk.ts \
+  qt/locale/cosmitto_vi.ts \
+  qt/locale/cosmitto_zh_CN.ts \
+  qt/locale/cosmitto_zh_TW.ts
 
 QT_FORMS_UI = \
   qt/forms/addressbookpage.ui \
@@ -125,16 +125,16 @@ BITCOIN_MM = \
   qt/macnotificationhandler.mm
 
 QT_MOC = \
-  qt/alqo.moc \
+  qt/cosmitto.moc \
   qt/bitcoinamountfield.moc \
   qt/intro.moc \
   qt/overviewpage.moc \
   qt/rpcconsole.moc
 
-QT_QRC_CPP = qt/qrc_alqo.cpp
-QT_QRC = qt/alqo.qrc
-QT_QRC_LOCALE_CPP = qt/qrc_alqo_locale.cpp
-QT_QRC_LOCALE = qt/alqo_locale.qrc
+QT_QRC_CPP = qt/qrc_cosmitto.cpp
+QT_QRC = qt/cosmitto.qrc
+QT_QRC_LOCALE_CPP = qt/qrc_cosmitto_locale.cpp
+QT_QRC_LOCALE = qt/cosmitto_locale.qrc
 
 PROTOBUF_CC = qt/paymentrequest.pb.cc
 PROTOBUF_H = qt/paymentrequest.pb.h
@@ -258,12 +258,12 @@ RES_ICONS = \
   qt/res/icons/tx_input.png \
   qt/res/icons/tx_output.png \
   qt/res/icons/tx_mined.png \
-  qt/res/icons/unit_alqo.png \
-  qt/res/icons/unit_malqo.png \
-  qt/res/icons/unit_ualqo.png \
-  qt/res/icons/unit_talqo.png \
-  qt/res/icons/unit_tmalqo.png \
-  qt/res/icons/unit_tualqo.png
+  qt/res/icons/unit_cosmitto.png \
+  qt/res/icons/unit_mcosmitto.png \
+  qt/res/icons/unit_ucosmitto.png \
+  qt/res/icons/unit_tcosmitto.png \
+  qt/res/icons/unit_tmcosmitto.png \
+  qt/res/icons/unit_tucosmitto.png
 
 BITCOIN_QT_CPP = \
   qt/bantablemodel.cpp \
@@ -337,7 +337,7 @@ RES_IMAGES = \
   qt/res/images/about.png \
   qt/res/images/splash.png \
   qt/res/images/splash_testnet.png \
-  qt/res/images/alqo_logo_horizontal.png \
+  qt/res/images/cosmitto_logo_horizontal.png \
   qt/res/images/downArrow_dark.png \
   qt/res/images/downArrow_small_dark.png \
   qt/res/images/downArrow_small.png \
@@ -355,7 +355,7 @@ RES_CSS = \
 
 RES_MOVIES = $(wildcard $(srcdir)/qt/res/movies/spinner-*.png)
 
-BITCOIN_RC = qt/res/alqo-qt-res.rc
+BITCOIN_RC = qt/res/cosmitto-qt-res.rc
 
 BITCOIN_QT_INCLUDES = -I$(builddir)/qt -I$(srcdir)/qt -I$(srcdir)/qt/forms \
   -I$(builddir)/qt/forms
@@ -377,72 +377,72 @@ QT_FORMS_H=$(join $(dir $(QT_FORMS_UI)),$(addprefix ui_, $(notdir $(QT_FORMS_UI:
 # Most files will depend on the forms and moc files as includes. Generate them
 # before anything else.
 $(QT_MOC): $(QT_FORMS_H)
-$(qt_libbitcoinqt_a_OBJECTS) $(qt_alqo_qt_OBJECTS) : | $(QT_MOC)
+$(qt_libbitcoinqt_a_OBJECTS) $(qt_cosmitto_qt_OBJECTS) : | $(QT_MOC)
 
 #Generating these with a half-written protobuf header leads to wacky results.
 #This makes sure it's done.
 $(QT_MOC): $(PROTOBUF_H)
 $(QT_MOC_CPP): $(PROTOBUF_H)
 
-# alqo-qt binary #
-qt_alqo_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
+# cosmitto-qt binary #
+qt_cosmitto_qt_CPPFLAGS = $(AM_CPPFLAGS) $(BITCOIN_INCLUDES) $(BITCOIN_QT_INCLUDES) \
   $(QT_INCLUDES) $(PROTOBUF_CFLAGS) $(QR_CFLAGS)
-qt_alqo_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
+qt_cosmitto_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 qt_bitcoin_qt_CXXFLAGS = $(AM_CXXFLAGS) $(QT_PIE_FLAGS)
 
-qt_alqo_qt_SOURCES = qt/alqo.cpp
+qt_cosmitto_qt_SOURCES = qt/cosmitto.cpp
 if TARGET_DARWIN
-  qt_alqo_qt_SOURCES += $(BITCOIN_MM)
+  qt_cosmitto_qt_SOURCES += $(BITCOIN_MM)
 endif
 if TARGET_WINDOWS
-  qt_alqo_qt_SOURCES += $(BITCOIN_RC)
+  qt_cosmitto_qt_SOURCES += $(BITCOIN_RC)
 endif
-qt_alqo_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
+qt_cosmitto_qt_LDADD = qt/libbitcoinqt.a $(LIBBITCOIN_SERVER)
 if ENABLE_WALLET
-qt_alqo_qt_LDADD += $(LIBBITCOIN_WALLET)
+qt_cosmitto_qt_LDADD += $(LIBBITCOIN_WALLET)
 endif
 if ENABLE_ZMQ
-qt_alqo_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
+qt_cosmitto_qt_LDADD += $(LIBBITCOIN_ZMQ) $(ZMQ_LIBS)
 endif
-qt_alqo_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
+qt_cosmitto_qt_LDADD += $(LIBBITCOIN_CLI) $(LIBBITCOIN_COMMON) $(LIBBITCOIN_UTIL) $(LIBBITCOIN_CRYPTO) $(LIBUNIVALUE) $(LIBBITCOIN_ZEROCOIN) $(LIBLEVELDB) $(LIBLEVELDB_SSE42) $(LIBMEMENV) \
   $(BOOST_LIBS) $(QT_LIBS) $(QT_DBUS_LIBS) $(QR_LIBS) $(PROTOBUF_LIBS) $(BDB_LIBS) $(SSL_LIBS) $(CRYPTO_LIBS) $(MINIUPNPC_LIBS) $(LIBSECP256K1) \
   $(EVENT_PTHREADS_LIBS) $(EVENT_LIBS)
-qt_alqo_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
-qt_alqo_qt_LIBTOOLFLAGS = --tag CXX
+qt_cosmitto_qt_LDFLAGS = $(RELDFLAGS) $(AM_LDFLAGS) $(QT_LDFLAGS) $(LIBTOOL_APP_LDFLAGS)
+qt_cosmitto_qt_LIBTOOLFLAGS = --tag CXX
 
 #locale/foo.ts -> locale/foo.qm
 QT_QM=$(QT_TS:.ts=.qm)
 
 SECONDARY: $(QT_QM)
 
-$(srcdir)/qt/alqostrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
+$(srcdir)/qt/cosmittostrings.cpp: $(libbitcoin_server_a_SOURCES) $(libbitcoin_wallet_a_SOURCES) $(libbitcoin_common_a_SOURCES) $(libbitcoin_zmq_a_SOURCES) $(libbitcoin_util_a_SOURCES)
 	@test -n $(XGETTEXT) || echo "xgettext is required for updating translations"
 	$(AM_V_GEN) cd $(srcdir); XGETTEXT=$(XGETTEXT) PACKAGE_NAME="$(PACKAGE_NAME)" $(PYTHON) ../share/qt/extract_strings_qt.py $^
 
-translate: $(srcdir)/qt/alqostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
+translate: $(srcdir)/qt/cosmittostrings.cpp $(QT_FORMS_UI) $(QT_FORMS_UI) $(BITCOIN_QT_CPP) $(BITCOIN_QT_H) $(BITCOIN_MM)
 	@test -n $(LUPDATE) || echo "lupdate is required for updating translations"
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/alqo_en.ts
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(LUPDATE) $^ -locations relative -no-obsolete -ts $(srcdir)/qt/locale/cosmitto_en.ts
 
 $(QT_QRC_LOCALE_CPP): $(QT_QRC_LOCALE) $(QT_QM)
 	@test -f $(RCC)
 	@cp -f $< $(@D)/temp_$(<F)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name alqo_locale $(@D)/temp_$(<F) | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name cosmitto_locale $(@D)/temp_$(<F) | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 	@rm $(@D)/temp_$(<F)
 
 $(QT_QRC_CPP): $(QT_QRC) $(QT_FORMS_H) $(RES_ICONS) $(RES_IMAGES) $(RES_CSS) $(RES_MOVIES) $(PROTOBUF_H)
 	@test -f $(RCC)
-	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name alqo $< | \
+	$(AM_V_GEN) QT_SELECT=$(QT_SELECT) $(RCC) -name cosmitto $< | \
 	  $(SED) -e '/^\*\*.*Created:/d' -e '/^\*\*.*by:/d' > $@
 
-CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_alqo_locale.qrc
+CLEAN_QT = $(nodist_qt_libbitcoinqt_a_SOURCES) $(QT_QM) $(QT_FORMS_H) qt/*.gcda qt/*.gcno qt/temp_cosmitto_locale.qrc
 
 CLEANFILES += $(CLEAN_QT)
 
-alqo_qt_clean: FORCE
-	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_alqo_qt_OBJECTS) qt/alqo-qt$(EXEEXT) $(LIBBITCOINQT)
+cosmitto_qt_clean: FORCE
+	rm -f $(CLEAN_QT) $(qt_libbitcoinqt_a_OBJECTS) $(qt_cosmitto_qt_OBJECTS) qt/cosmitto-qt$(EXEEXT) $(LIBBITCOINQT)
 
-alqo_qt : qt/alqo-qt$(EXEEXT)
+cosmitto_qt : qt/cosmitto-qt$(EXEEXT)
 
 ui_%.h: %.ui
 	@test -f $(UIC)

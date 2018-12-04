@@ -16,14 +16,14 @@ BEGIN
     BEGIN
         BLOCK "040904E4" // U.S. English - multilingual (hex)
         BEGIN
-            VALUE "CompanyName",        "ALQO"
-            VALUE "FileDescription",    "alqo-tx (CLI ALQO transaction editor utility)"
+            VALUE "CompanyName",        "cosmitto"
+            VALUE "FileDescription",    "cosmitto-tx (CLI cosmitto transaction editor utility)"
             VALUE "FileVersion",        VER_FILEVERSION_STR
-            VALUE "InternalName",       "alqo-tx"
+            VALUE "InternalName",       "cosmitto-tx"
             VALUE "LegalCopyright",     COPYRIGHT_STR
             VALUE "LegalTrademarks1",   "Distributed under the MIT software license, see the accompanying file COPYING or http://www.opensource.org/licenses/mit-license.php."
-            VALUE "OriginalFilename",   "alqo-tx.exe"
-            VALUE "ProductName",        "alqo-tx"
+            VALUE "OriginalFilename",   "cosmitto-tx.exe"
+            VALUE "ProductName",        "cosmitto-tx"
             VALUE "ProductVersion",     VER_PRODUCTVERSION_STR
         END
     END

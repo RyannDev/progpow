@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The cosmitto & Bitfineon developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -591,7 +592,7 @@ bool CMasternodeBlockPayees::IsTransactionValid(const CTransaction& txNew)
 		if(out.scriptPubKey == developerfeescriptpubkey) {
 			if(out.nValue >= requiredDeveloperPayment) {
 				foundDeveloperPayment = true;
-				LogPrint("masternode", "Developer-Fee Payment found! Thanks for supporting ALQO!");
+				LogPrint("masternode", "Developer-Fee Payment found! Thanks for supporting cosmitto!");
 			}
 		}
 	}
