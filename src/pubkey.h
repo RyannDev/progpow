@@ -1,11 +1,12 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_PUBKEY_H
-#define ALQO_PUBKEY_H
+#ifndef COSMITTO_PUBKEY_H
+#define COSMITTO_PUBKEY_H
 
 #include "hash.h"
 #include "serialize.h"
@@ -268,4 +269,4 @@ public:
     ~ECCVerifyHandle();
 };
 
-#endif // ALQO_PUBKEY_H
+#endif // COSMITTO_PUBKEY_H

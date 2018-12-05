@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_ZXLQWALLET_H
-#define ALQO_ZXLQWALLET_H
+#ifndef COSMITTO_ZXLQWALLET_H
+#define COSMITTO_ZXLQWALLET_H
 
 #include <map>
 #include "libzerocoin/Coin.h"
@@ -45,4 +46,4 @@ private:
     uint512 GetZerocoinSeed(uint32_t n);
 };
 
-#endif //ALQO_ZXLQWALLET_H
+#endif //COSMITTO_ZXLQWALLET_H

@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_STAKEINPUT_H
-#define ALQO_STAKEINPUT_H
+#ifndef COSMITTO_STAKEINPUT_H
+#define COSMITTO_STAKEINPUT_H
 
 class CKeyStore;
 class CWallet;
@@ -87,4 +88,4 @@ public:
 };
 
 
-#endif //ALQO_STAKEINPUT_H
+#endif //COSMITTO_STAKEINPUT_H

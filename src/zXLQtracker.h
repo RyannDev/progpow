@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_ZXLQTRACKER_H
-#define ALQO_ZXLQTRACKER_H
+#ifndef COSMITTO_ZXLQTRACKER_H
+#define COSMITTO_ZXLQTRACKER_H
 
 #include "primitives/zerocoin.h"
 #include <list>
@@ -48,4 +49,4 @@ public:
     void Clear();
 };
 
-#endif //ALQO_ZXLQTRACKER_H
+#endif //COSMITTO_ZXLQTRACKER_H

@@ -1,9 +1,10 @@
-// Copyright (c) 2015-2017 The PIVX developers// Copyright (c) 2017-2018 The ALQO & Bitfineon developers
+// Copyright (c) 2015-2017 The PIVX developers
+// Copyright (c) 2017-2018 The COSMITTO & Bitfineon developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-#ifndef ALQO_MINTPOOL_H
-#define ALQO_MINTPOOL_H
+#ifndef COSMITTO_MINTPOOL_H
+#define COSMITTO_MINTPOOL_H
 
 #include <map>
 #include <list>
@@ -50,4 +51,4 @@ public:
 };
 
 
-#endif //ALQO_MINTPOOL_H
+#endif //COSMITTO_MINTPOOL_H
