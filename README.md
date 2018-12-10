@@ -28,21 +28,30 @@ Phase 1: ( 1 coin block) 1 day until block 1441 = 1 441 Coins  // This will be t
 Phase 2: (1 coin block) 1 day until block 2881 = 2 881 Coins  // This will be the first starting phase of POS / masternode 
 
 Phase 3: (2 coins block)  2 days until block 5761 = 5 760 coins ( Phase 2) 
+
 Phase 4: ( 3 coins block ) 6 days until block 14 401 = 25 920 coins
+
 Phase 5: ( 5 coins block ) 15 days until block 36001 = 108 000 Coins( Phase 3 ) 4D = 28.8k
+
 Phase 6: ( 8 coins block) 40 days until block 165 600 = 460 800 Coins 
+
 Phase 7: ( 13 coins block)  104 days until block 315 360 = 1 946 880 coins 
+
 Phase 8: ( 18 coins block) 108 days until block 947 520 = 2 799 360 coins  // After this block the rewards start to go down 
 
 Phase 9: ( 11 coins block ) 165 days until block  1 185 120 = 2 613 600 coins 
+
 Phase 10: ( 7 coins block ) 280 days until block 1 588 320 = 2 822 40 coins 
+
 Phase 11: ( 4 coins block) 416 days until block 2 187 360 = 2 396 160 coins
+
 Phase 12: (3 coins block ) 819 days until block  3 366 720 = 3 538 080 coins 
+
 Phase 13: FINAL PHASE 2 coins block until 3 366 720 // end phase 
 
 # PoS Reward Distribution
 
-_Proof of Stake will automatically be enabled at block height 409001._
+_Proof of Stake will automatically be enabled at block height 2._
 <table>
 <tr><th>Block Height</th><th>Reward Amount</th>
 </table>
