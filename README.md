@@ -40,6 +40,6 @@ Proof of Work: ?% of rewards
 _For more information check out our whitepaper at: [?](?)_
 
 
-Alternatively, we have added a non .pdf version in our Github repository. You can find it in the CMT Github Wiki.
+Alternatively, we have added a non .pdf version in our Github repository. You can find it in the ? Github Wiki.
 
-[https://github.com/cosmitto](https://github.com/?)
+[https://github.com/?](https://github.com/?)
