@@ -3,7 +3,7 @@
 This issue tracker is only for technical issues related to CMT Core.
 General CMT questions and/or support requests and are best directed to the [CMT Discord](https://discord.cosmitto.org).
 
-### Describe the issue
+### Describe the issue1
 
 ### Can you reliably reproduce the issue?
 #### If so, please list the steps to reproduce below:
