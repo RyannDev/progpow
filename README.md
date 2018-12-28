@@ -1,4 +1,4 @@
-For more information please visit us at: [cosmitto.io](https://cosmitto.io/) or visit our ANN thread at: [BitcoinTalk](https://bitcointalk.org/)
+For more information please visit us at: [?.io](https://?.io/) or visit our ANN thread at: [BitcoinTalk](https://bitcointalk.org/)
 
 # Coin Specs
 
