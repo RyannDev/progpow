@@ -1,12 +1,12 @@
-# bash programmable completion for cosmittod(1) and cosmitto-cli(1)
+# bash programmable completion for progpowd(1) and progpow-cli(1)
 # Copyright (c) 2012,2014 Christian von Roques <roques@mti.ag>
 # Distributed under the MIT/X11 software license, see the accompanying
 # file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
-have cosmittod && {
+have progpowd && {
 
-# call $cosmittod for RPC
-_cosmitto_rpc() {
+# call $progpowd for RPC
+_progpow_rpc() {
     # determine already specified args necessary for RPC
     local rpcargs=()
     for i in ${COMP_LINE}; do
@@ -16,23 +16,23 @@ _cosmitto_rpc() {
                 ;;
         esac
     done
-    $cosmittod "${rpcargs[@]}" "$@"
+    $progpowd "${rpcargs[@]}" "$@"
 }
 
-# Add cosmitto accounts to COMPREPLY
-_cosmitto_accounts() {
+# Add progpow accounts to COMPREPLY
+_progpow_accounts() {
     local accounts
-    accounts=$(_cosmitto_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
+    accounts=$(_progpow_rpc listaccounts | awk '/".*"/ { a=$1; gsub(/"/, "", a); print a}')
     COMPREPLY=( "${COMPREPLY[@]}" $( compgen -W "$accounts" -- "$cur" ) )
 }
 
-_cosmittod() {
+_progpowd() {
     local cur prev words=() cword
-    local cosmittod
+    local progpowd
 
-    # save and use original argument to invoke cosmittod
-    # cosmittod might not be in $PATH
-    cosmittod="$1"
+    # save and use original argument to invoke progpowd
+    # progpowd might not be in $PATH
+    progpowd="$1"
 
     COMPREPLY=()
     _get_comp_words_by_ref -n = cur prev words cword
@@ -53,7 +53,7 @@ _cosmittod() {
     if ((cword > 3)); then
         case ${words[cword-3]} in
             addmultisigaddress)
-                _cosmitto_accounts
+                _progpow_accounts
                 return 0
                 ;;
             getbalance|gettxout|importaddress|importprivkey|listreceivedbyaccount|listreceivedbyaddress|listsinceblock)
@@ -74,7 +74,7 @@ _cosmittod() {
                 return 0
                 ;;
             move|setaccount)
-                _cosmitto_accounts
+                _progpow_accounts
                 return 0
                 ;;
         esac
@@ -90,7 +90,7 @@ _cosmittod() {
             return 0
             ;;
         getaccountaddress|getaddressesbyaccount|getbalance|getnewaddress|getreceivedbyaccount|listtransactions|move|sendfrom|sendmany)
-            _cosmitto_accounts
+            _progpow_accounts
             return 0
             ;;
     esac
@@ -114,12 +114,12 @@ _cosmittod() {
 
             # only parse --help if senseful
             if [[ -z "$cur" || "$cur" =~ ^- ]]; then
-                helpopts=$($cosmittod --help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
+                helpopts=$($progpowd --help 2>&1 | awk '$1 ~ /^-/ { sub(/=.*/, "="); print $1 }' )
             fi
 
             # only parse help if senseful
             if [[ -z "$cur" || "$cur" =~ ^[a-z] ]]; then
-                commands=$(_cosmitto_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
+                commands=$(_progpow_rpc help 2>/dev/null | awk '$1 ~ /^[a-z]/ { print $1; }')
             fi
 
             COMPREPLY=( $( compgen -W "$helpopts $commands" -- "$cur" ) )
@@ -133,7 +133,7 @@ _cosmittod() {
     esac
 }
 
-complete -F _cosmittod cosmittod cosmitto-cli
+complete -F _progpowd progpowd progpow-cli
 }
 
 # Local variables:
